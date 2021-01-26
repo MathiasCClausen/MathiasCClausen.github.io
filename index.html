@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="jquery/jquery.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+
+    $('#billedtekst').hide().show(2000);
+    $('#branding').hide().show(2000);
+
+    $("a").click(function(){
+        var targetHref   = $(this).attr('href');
+        if (targetHref == "#Forside"){
+            $("html, body").stop().animate({ scrollTop: 0}, 500);
+        }
+        else{
+        $("html, body").stop().animate({ scrollTop: $(targetHref).offset().top-120}, 500, 'swing', function(){window.location.hash = targetHref;});
+        $(targetHref).hide().fadeIn(2000);
+        }
+    });
+
+
+
+    });
+/*
+    $(function() {
+    var div = $('#showcase');
+    var backgrounds = ['url(./Billeder/hop.jpg)', 'url(./Billeder/ribben.jpg)', 'url(./Billeder/opstilling1.jpg)' ];
+    var current = 0;
+
+    function nextBackground() {
+    div.css('background', backgrounds[current = ++current % backgrounds.length]
+    ); setTimeout(nextBackground, 5000);
+    }
+    setTimeout(nextBackground, 5000);
+        div.css('background', backgrounds[0]);
+    div.css('background-attachment',fixed);
+    });
+*/
+
+    </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="min første hjemmeside">
+        <title>Mathias hjemmeside - Velkommen</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1> <span class="highlight"> Mathias</span> Clausen</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="current"><a href="#Forside">Forside</a> </li>
+                        <li><a href="#kompetencer"> Kompetencer </a> </li>
+                        <li><a href="#Uddannelse">Uddannelse</a> </li>
+                        <li><a href="#ommig">Om mig</a> </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="showcase">
+            <div class="container" id="billedtekst">
+                <h1 id='overskrift'>Mathias Clausen</h1>
+                <p>26 årig ingeniørstuderende ved Velfærdsteknologi på SDU</p>
+                <!-- <img src="Billeder/CV.png" class="mig" width="300" height="300"> --> 
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <div class="container">
+                <h1 id='henvendelse'> Kontakt:</h1>
+                <a href="https://www.facebook.com/mathias.c.clausen/" target="_blank">
+                    <img src="Billeder/ikoner/facebook.png" width="64" height="64">
+                </a>
+                <a href="mailto:mathichristian@gmail.com">
+                    <img src="Billeder/ikoner/contact.png">
+                </a>
+                <a href="https://www.github.com/MathiasCClausen/" target="_blank">
+                    <img src="Billeder/ikoner/git.png" width="64" height="64">
+                </a>
+                <a href="https://www.linkedin.com/in/mathias-c-clausen/" target="_blank">
+                    <img src="Billeder/ikoner/linkedin.png" width="64" height="64">
+                </a>
+            </div>
+        </section>
+
+        <section class="foo" id="kompetencer">
+            <h1 id='overskrift'> Kompetencer </h1>
+            <div class="container2">
+                <div class="boks">
+                    <img src="./Billeder/machinelearning.png">
+                    <h3>Machine Learning</h3>
+                    <p>Udvikling af machine- og deep learning modeller</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/robot.png">
+                    <h3>Robotics</h3>
+                    <p>Arbejde med robot og embedded systems</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/web.png">
+                    <h3>Webudvikling</h3>
+                    <p>Hjemmesider og databaser</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/signal.jpg">
+                    <h3>Signalprocessing</h3>
+                    <p>Signal- og dataanalyser</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/biomechatronics.jpg">
+                    <h3>Biomechanics</h3>
+                    <p>Biomechatronics, Biomechanics og Fysiologi</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="showcase2">
+            <div class="container"></div>
+        </section>
+
+        <section class="foo" id="Uddannelse">
+            <h1 id='overskrift'> Uddannelse </h1>
+            <div class="container">
+                <div class="boks">
+                    <img src="./Billeder/uddannelse/SDU.jpg" width="150" height="40">
+                    <h3>M.sc. Velfærdsteknologi</h3>
+                    <p>Kandidat RoboMedic</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/uddannelse/esci.png" width="150" height="70">
+                    <h3>Udlandssemester ESCI-UPF Barcelona</h3>
+                    <p>Et semester med kurser inden for Bioinformatik</p>
+                </div>
+                <div class="boks">
+                    <img src="./Billeder/uddannelse/gym.png" width="150" height="55">
+                    <h3>Svendborg Gymnasium STX</h3>
+                    <p>Naturvidenskabelig linje</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="showcase3">
+            <div class="container"></div>
+        </section>
+
+        <section class="foo" id="ommig">
+            <h1 id='overskrift'> Om mig </h1>
+            <div class="container">
+                <div class="boks">
+                    <img src="./Billeder/CV.png" width="500" height="500">
+                </div>
+                <div class="boks">
+                    <h3>Mit navn er Mathias</h3>
+                    <p>”26 år, kandidatstuderende og bosiddende i Odense med min kæreste.</p>
+                    <p> Jeg har en stor interesse for softwareudvikling og er desuden lidt af en tekniknørd.</p>
+                    <p>Jeg elsker også at træne hvoraf min fritid bliver brugt på springgymnastik
+                    og vægtløftning.”</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; 2019</p>
+            </div>
+        </footer>
+    </body>
+
+</html>
